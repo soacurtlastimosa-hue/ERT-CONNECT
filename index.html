@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERT Connect | Community Safety</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="logo">✚</span><span>ERT <b>CONNECT</b><small>Emergency Response &amp; Community Safety</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰ Menu</button>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#about">About ERT</a><a href="#safety">Safety Guide</a>
+      <a href="#contacts">Contacts</a><a href="#activities">Activities</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">BE PREPARED • STAY SAFE • HELP OTHERS</p>
+        <h1>Welcome to<br>ERT <span>CONNECT</span></h1>
+        <p>Your one-stop source for emergency response information, safety guides, and community updates.</p>
+        <a class="button" href="#safety">Explore Safety Guides →</a>
+      </div>
+      <div class="hero-visual">
+        <div class="shield">✚</div>
+        <h2>SAFER COMMUNITIES<br>STRONGER TOGETHER</h2>
+        <p>Preparedness starts with knowledge.</p>
+      </div>
+    </section>
+
+    <section class="feature-grid section" id="about">
+      <a class="feature" href="#about-details"><div class="feature-icon">⌂</div><h3>About ERT</h3><p>Learn about the team, mission, and roles.</p><b>Learn more →</b></a>
+      <a class="feature" href="#safety"><div class="feature-icon">▤</div><h3>Safety Guide</h3><p>Get prepared for different emergencies.</p><b>View guides →</b></a>
+      <a class="feature" href="#contacts"><div class="feature-icon">☎</div><h3>Emergency Contacts</h3><p>Find verified contact information.</p><b>View contacts →</b></a>
+      <a class="feature" href="#activities"><div class="feature-icon">▣</div><h3>Activities &amp; Gallery</h3><p>See training and community events.</p><b>Explore →</b></a>
+      <a class="feature" href="#contact"><div class="feature-icon">✉</div><h3>Contact</h3><p>Send a message or visit official channels.</p><b>Get in touch →</b></a>
+    </section>
+
+    <section class="safety section" id="safety">
+      <div class="safety-intro">
+        <p class="eyebrow">QUICK SAFETY REMINDERS</p><h2>Be Ready, Be Safe</h2>
+        <p>Learn simple steps to protect yourself, your family, and your community.</p>
+        <a class="button" href="#guides">View Safety Tips →</a>
+      </div>
+      <div class="disasters">
+        <article><div class="round-icon">⌂</div><h3>Earthquake</h3><p>Drop, Cover, and Hold.</p></article>
+        <article><div class="round-icon red-bg">♨</div><h3>Fire</h3><p>Get out safely and call for help.</p></article>
+        <article><div class="round-icon">≋</div><h3>Flood</h3><p>Move to higher ground.</p></article>
+        <article><div class="round-icon red-bg">🌀</div><h3>Typhoon</h3><p>Stay informed and prepared.</p></article>
+      </div>
+    </section>
+
+    <section class="section search-section" id="guides">
+      <div>
+        <h2>⌕ Find Safety Information</h2><p>Search for guides, tips, or topics you need.</p>
+        <form id="searchForm" class="search-form">
+          <input id="searchInput" type="search" placeholder="Search safety information..." aria-label="Search safety information">
+          <button type="submit" aria-label="Search">Search</button>
+        </form>
+      </div>
+      <div class="filters">
+        <h3>Filter by Category</h3>
+        <div class="filter-buttons">
+          <button class="active" data-category="All">All</button><button data-category="Earthquake">Earthquake</button>
+          <button data-category="Fire">Fire</button><button data-category="Flood">Flood</button><button data-category="Typhoon">Typhoon</button>
+        </div>
+      </div>
+      <div class="results" id="results" aria-live="polite"></div>
+    </section>
+
+    <section class="section quiz-section">
+      <p class="eyebrow">TEST YOUR KNOWLEDGE</p><h2>Safety Awareness Quiz</h2>
+      <div class="quiz-box">
+        <p><b>What should you do during an earthquake while indoors?</b></p>
+        <label><input type="radio" name="answer" value="a"> Run toward the windows</label>
+        <label><input type="radio" name="answer" value="b"> Drop, Cover, and Hold On</label>
+        <label><input type="radio" name="answer" value="c"> Use the elevator</label>
+        <button class="button" id="checkAnswer">Check Answer</button>
+        <p id="quizResult" role="status"></p>
+      </div>
+    </section>
+
+    <section class="cta" id="about-details">
+      <div><h2>Prepared Today,<br>Safer Tomorrow</h2><p>Together, we can build a safer and stronger community.</p></div>
+      <a class="button light-button" href="#safety">Learn More →</a>
+    </section>
+
+    <section class="section info-section">
+      <article id="contacts"><h2>Emergency Contacts</h2><p>Please add only verified local emergency numbers here.</p><p><b>Reminder:</b> In an actual emergency, contact your official local emergency service directly.</p></article>
+      <article id="activities"><h2>Activities &amp; Gallery</h2><p>Add approved photos and details about ERT training, drills, and community activities.</p></article>
+      <article id="contact"><h2>Contact</h2><p>For project inquiries, add the official ERT contact information after it has been verified.</p></article>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand">ERT <span>CONNECT</span></div><p>Emergency Response &amp; Community Safety</p><small>© <span id="year"></span> ERT Connect. Educational information only.</small></footer>
+  <script src="script.js"></script>
+</body>
+</html>
