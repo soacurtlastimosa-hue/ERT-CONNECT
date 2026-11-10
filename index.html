@@ -12,7 +12,7 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰ Menu</button>
     <nav id="nav">
       <a href="#home">Home</a><a href="#about">About ERT</a><a href="#safety">Safety Guide</a>
-      <a href="#contacts">Contacts</a><a href="#activities">Activities</a><a href="#contact">Contact</a>
+      <a href="#emergency contacts">Emergency Contacts</a><a href="#activities">Activities</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -73,13 +73,17 @@
 
     <section class="section quiz-section">
       <p class="eyebrow">TEST YOUR KNOWLEDGE</p><h2>Safety Awareness Quiz</h2>
-      <div class="quiz-box">
-        <p><b>What should you do during an earthquake while indoors?</b></p>
-        <label><input type="radio" name="answer" value="a"> Run toward the windows</label>
-        <label><input type="radio" name="answer" value="b"> Drop, Cover, and Hold On</label>
-        <label><input type="radio" name="answer" value="c"> Use the elevator</label>
+      <div class="quiz-box" id="quizBox">
+        <p class="quiz-progress" id="quizProgress">Question 1 of 5</p>
+        <p class="quiz-question" id="quizQuestion"><b>What should you do during an earthquake while indoors?</b></p>
+        <div id="quizChoices">
+          <label><input type="radio" name="answer" value="a"> Run toward the windows</label>
+          <label><input type="radio" name="answer" value="b"> Drop, Cover, and Hold On</label>
+          <label><input type="radio" name="answer" value="c"> Use the elevator</label>
+        </div>
         <button class="button" id="checkAnswer">Check Answer</button>
-        <p id="quizResult" role="status"></p>
+        <button class="button quiz-next" id="nextQuestion" hidden>Next Question →</button>
+        <p id="quizResult" role="status" aria-live="polite"></p>
       </div>
     </section>
 
@@ -89,9 +93,36 @@
     </section>
 
     <section class="section info-section">
-      <article id="contacts"><h2>Emergency Contacts</h2><p>Please add only verified local emergency numbers here.</p><p><b>Reminder:</b> In an actual emergency, contact your official local emergency service directly.</p></article>
-      <article id="activities"><h2>Activities &amp; Gallery</h2><p>Add approved photos and details about ERT training, drills, and community activities.</p></article>
-      <article id="contact"><h2>Contact</h2><p>For project inquiries, add the official ERT contact information after it has been verified.</p></article>
+      <article id="emergency contacts" class="emergency contact-panel">
+        <p class="eyebrow">IMPORTANT NUMBERS</p><h2>Emergency Contacts</h2>
+        <p>Use these listed contacts for assistance. </p>
+        <ul class="emergency contact-list">
+          <li><strong>CEBU MEDICAL CENTER</strong><a href="tel:0322655986">(032) 265-5986</a></li>
+          <li><strong>TALISAY CITY POLICE</strong><a href="tel:0324075928">(032) 407-5928</a></li>
+          <li><strong>TALISAY CITY FIRE STATION</strong><a href="tel:0324078083">(032) 407-8083</a></li>
+        </ul>
+        <p class="small-note"><b>Reminder:</b> In an actual emergency, contact the appropriate official emergency service directly.</p>
+      </article>
+      <article id="activities" class="gallery-panel">
+        <p class="eyebrow">OUR COMMUNITY IN ACTION</p><h2>Activities &amp; Gallery</h2>
+        <p>Photos from emergency response demonstrations, training activities, and team participation.</p>
+        <div class="gallery-grid">
+          <figure><img src="images/ert-first-aid-training.png" alt="First aid demonstration with ERT trainees"><figcaption>First Aid Demonstration</figcaption></figure>
+          <figure><img src="images/ert-stretcher-training.png" alt="ERT trainees practicing stretcher handling"><figcaption>Stretcher Handling Practice</figcaption></figure>
+          <figure><img src="images/ert-response-activity.png" alt="ERT members and students taking part in a response activity"><figcaption>Emergency Response Activity</figcaption></figure>
+          <figure><img src="images/ert-team-event.png" alt="ERT team members attending a community event"><figcaption>ERT Team Participation</figcaption></figure>
+        </div>
+        <p class="small-note"></p>
+      </article>
+      <article id="contact" class="contact-panel">
+        <p class="eyebrow">GET IN TOUCH</p><h2>Contact</h2>
+        <p>For project-related questions, you may contact the team through these numbers:</p>
+        <ul class="contact-list">
+          <li><strong>Contact Number 1</strong><a href="tel:09930323169">0993 032 3169</a></li>
+          <li><strong>Contact Number 2</strong><a href="tel:09618376281">0961 837 6281</a></li>
+        </ul>
+        <p class="small-note">Please contact these numbers for ERT Connect project inquiries only.</p>
+      </article>
     </section>
   </main>
 
