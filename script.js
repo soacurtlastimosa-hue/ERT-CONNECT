@@ -1,10 +1,21 @@
 const guides = [
-  {category:"Earthquake", title:"During an Earthquake", text:"Drop, Cover, and Hold On. Stay away from windows and protect your head and neck."},
-  {category:"Earthquake", title:"After an Earthquake", text:"Check for hazards, expect aftershocks, and follow official instructions."},
-  {category:"Fire", title:"Fire Safety", text:"Leave the building using a safe exit. Do not use elevators. Call the local fire service from a safe place."},
-  {category:"Flood", title:"Flood Preparedness", text:"Move to higher ground and never walk or drive through floodwater."},
-  {category:"Typhoon", title:"Typhoon Preparedness", text:"Monitor official weather updates, prepare essential supplies, and follow evacuation advice."}
-];
+  {category:"Earthquake", title:"During an Earthquake", text:"Drop, Cover, and Hold On. Stay away from windows and protect your head and neck.", source:"https://www.unicef.org/philippines/emergency-preparedness-tips-earthquakes", sourceLabel:"UNICEF Philippines"},
+  {category:"Earthquake", title:"After an Earthquake", text:"Watch for aftershocks. When it is safe, leave damaged buildings, avoid elevators, and follow official instructions.", source:"https://www.unicef.org/philippines/emergency-preparedness-tips-earthquakes", sourceLabel:"UNICEF Philippines"},
+  {category:"Earthquake", title:"Before an Earthquake", text:"Secure heavy furniture, identify safe spots and exits, and take part in school or community earthquake drills.", source:"https://quezoncity.gov.ph/departments/quezon-city-disaster-and-risk-reduction-management-office/", sourceLabel:"Quezon City Government"},
+  {category:"Fire", title:"Fire Safety", text:"Leave the building using a safe exit. Do not use elevators. Call the local fire service from a safe place.", source:"https://quezoncity.gov.ph/departments/quezon-city-disaster-and-risk-reduction-management-office/", sourceLabel:"Quezon City Government"},
+  {category:"Fire", title:"If Smoke Is Present", text:"Stay low while moving toward a safe exit. Do not stop to collect belongings, and never go back inside a burning building.", source:"https://www.deped.gov.ph/wp-content/uploads/Q2_LAs_Health10_08.pdf", sourceLabel:"Department of Education"},
+  {category:"Flood", title:"Flood Preparedness", text:"Move to higher ground and never walk or drive through floodwater.", source:"https://www.pagasa.dost.gov.ph/learning-tools/floods", sourceLabel:"PAGASA"},
+  {category:"Flood", title:"After a Flood", text:"Return only when authorities say it is safe. Avoid floodwater and do not use wet electrical equipment until it has been checked.", source:"https://quezoncity.gov.ph/departments/quezon-city-disaster-and-risk-reduction-management-office/", sourceLabel:"Quezon City Government"},
+  {category:"Typhoon", title:"Typhoon Preparedness", text:"Monitor official weather updates, prepare essential supplies, and follow evacuation advice.", source:"https://www.unicef.org/philippines/emergency-preparedness-tips-typhoons", sourceLabel:"UNICEF Philippines"},
+  {category:"Typhoon", title:"During a Typhoon", text:"Stay indoors in a secure place, keep listening to official advisories, and follow local evacuation instructions.", source:"https://www.unicef.org/philippines/emergency-preparedness-tips-typhoons", sourceLabel:"UNICEF Philippines"},
+  {category:"Landslide", title:"Landslide Awareness", text:"Know whether your area is landslide-prone. Watch for official warnings and evacuate when instructed by local authorities.", source:"https://www.unicef.org/philippines/emergency-preparedness-tips-families-and-children", sourceLabel:"UNICEF Philippines"},
+  {category:"Tsunami", title:"Tsunami Safety", text:"If you are near the coast and feel a strong earthquake or receive an official tsunami warning, move inland or to higher ground immediately.", source:"https://www.unicef.org/philippines/emergency-preparedness-tips-earthquakes", sourceLabel:"UNICEF Philippines"},
+  {category:"Volcanic Eruption", title:"Volcanic Ash Safety", text:"Follow PHIVOLCS and local government advisories. Stay away from danger zones and follow evacuation instructions.", source:"https://www.unicef.org/philippines/ready-ba-ang-pamilya-case-emergencies-and-disasters", sourceLabel:"UNICEF Philippines"},
+  {category:"Emergency Preparedness", title:"Prepare an Emergency Go-Bag", text:"Prepare drinking water, ready-to-eat food, a flashlight, a first-aid kit, personal medicines, a power bank, and copies of important documents.", source:"https://quezoncity.gov.ph/qcitizen-guides/how-to-prepare-a-go-bag/", sourceLabel:"Quezon City Government"},
+  {category:"Emergency Preparedness", title:"Make a Family Emergency Plan", text:"Agree on evacuation routes, a meeting place, emergency contacts, and how family members will contact one another.", source:"https://www.unicef.org/philippines/emergency-preparedness-tips-families-and-children", sourceLabel:"UNICEF Philippines"},
+  {category:"Emergency Preparedness", title:"Follow Official Advisories", text:"Get updates from trusted government agencies and your local government. Do not share unverified emergency information.", source:"https://www.unicef.org/philippines/emergency-preparedness-tips-families-and-children", sourceLabel:"UNICEF Philippines"},
+  {category:"First Aid", title:"When Someone Is Injured", text:"Keep yourself safe, call trained responders, and follow instructions from qualified first-aid personnel. Do not attempt care beyond your training.", source:"https://quezoncity.gov.ph/departments/quezon-city-disaster-and-risk-reduction-management-office/", sourceLabel:"Quezon City Government"}
+]
 
 const results = document.getElementById("results");
 const searchInput = document.getElementById("searchInput");
@@ -31,7 +42,13 @@ function renderGuides() {
     title.textContent = `${guide.category}: ${guide.title}`;
     const text = document.createElement("p");
     text.textContent = guide.text;
-    card.append(title, text);
+    const source = document.createElement("a");
+    source.className = "guide-source";
+    source.href = guide.source;
+    source.target = "_blank";
+    source.rel = "noopener noreferrer";
+    source.textContent = `Learn more: ${guide.sourceLabel}`;
+    card.append(title, text, source);
     results.appendChild(card);
   });
 }

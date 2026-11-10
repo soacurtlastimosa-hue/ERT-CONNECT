@@ -87,3 +87,6 @@ footer small{color:#d6e5f5}
 @media(max-width:900px){.info-section{grid-template-columns:1fr 1fr}.gallery-panel{grid-column:1/-1}}
 @media(max-width:650px){.info-section{grid-template-columns:1fr}.gallery-panel{grid-column:auto}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img{height:150px}}
 @media(max-width:390px){.gallery-grid{grid-template-columns:1fr}.gallery-grid img{height:190px}}
+
+.guide-source{display:inline-block;margin-top:10px;color:var(--red);font-size:.82rem;font-weight:700;text-decoration:underline}
+.filter-buttons button{font-size:.88rem}
